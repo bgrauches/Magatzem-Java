@@ -49,5 +49,18 @@ public class Article {
 		cadena += "\n--------------------------------------------------";
 		return cadena;
 	}
+	//METODES PER LA ARRAY DE MAGATZEM
+	public static void add(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public static int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public static char[] get(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 
