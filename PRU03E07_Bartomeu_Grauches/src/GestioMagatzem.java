@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class GestioMagatzem {
+
 	
 	//METODE MENU
 	public static int showMenu() {
@@ -22,18 +23,19 @@ public class GestioMagatzem {
 	
 	//METODE 1-LLISTAT
 	 public static void llista() {
-		    ArrayList<String> Atricle = new ArrayList<String>();
-		    Article.add("Patates");
-		    Article.add("Pilotes");
-		    Article.add("Sobrasada");
-		    Article.add("Voll-Damn");
-		    for (int i = 0; i < Article.size(); i++) {
-		      System.out.println(Article.get(i));
+		    
+		    
+		    for (int i = 1; i < Article.size(); i++) {
+		      System.out.println(i + " - " + Article.get[i]));
 		    }
 		  }
 	 
 	 //METODE 2-ALTA
 	 public static void altaArticle() {
+                 Article.add("Patates");
+		 Article.add("Pilotes");
+		 Article.add("Sobrasada");
+		 Article.add("Voll-Damn");
 		 Article object1 = new Article();
 		 llista.add(object1);
 		 
@@ -64,7 +66,8 @@ public class GestioMagatzem {
 	
 	
 	public static void main(String[] args) {
-		
+		ArrayList<String> Atricle = new ArrayList<String>();
+
 		boolean Salir = false;
 		
 		while (Salir == false) {
