@@ -1,11 +1,26 @@
-
 public class Article {
-	private String codi = "Lliure";
+	
+	private String codi = "LLIURE";
 	private String descripcio;
 	private double preuDeCompra;
 	private double preuDeVenda;
 	private int stock;
 	
+
+	
+	public Article(String codi2, String descripcio2, double preuDeCompra2, double preuDeVenda2, int stock2) {
+		this.codi = codi2;
+		this.descripcio = descripcio2;
+		this.preuDeCompra  = preuDeCompra2;
+		this.preuDeVenda = preuDeVenda2;
+		this.stock = stock2;
+		// TODO Auto-generated constructor stub
+	}
+
+	public Article() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getCodi() {
 		return codi;
 	}
@@ -40,7 +55,7 @@ public class Article {
 	
 	
 	public String toString() {
-		String cadena = "----------------------------------------------";
+		String cadena = "\n----------------------------------------------";
 		cadena += "\nCodi: "+ this.codi;
 		cadena += "\nDescripcio: "+ this.descripcio;
 		cadena += "\nPreu de compra: "+ this.preuDeCompra;
@@ -49,18 +64,5 @@ public class Article {
 		cadena += "\n--------------------------------------------------";
 		return cadena;
 	}
-	//METODES PER LA ARRAY DE MAGATZEM
-	public static void add(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public static int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	public static char[] get(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}
 
+}
