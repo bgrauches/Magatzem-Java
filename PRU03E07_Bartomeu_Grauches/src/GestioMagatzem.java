@@ -3,19 +3,20 @@ import java.util.ArrayList;
 
 public class GestioMagatzem {
 
-	static ArrayList<Article> Item = new ArrayList<Article>();
+	static ArrayList<Article> Item = new ArrayList<>();
 	static int contador = 1;
 	
 
-	static Scanner s1, s2, s3, s4, s5 = new Scanner(System.in);
+	static Scanner s1 = new Scanner(System.in);
+	static Scanner s2 = new Scanner(System.in);
+	static Scanner s3 = new Scanner(System.in);
+	static Scanner s4 = new Scanner(System.in);
+	static Scanner s5 = new Scanner(System.in);
 	
 	static Scanner remov = new Scanner(System.in);
 	
-	static Scanner modsc = new Scanner (System.in);
-	static int option = modsc.nextInt();
-	static Scanner mod1, mod2, mod3, mod4, mod5 = new Scanner(System.in);
+	static Scanner mod = new Scanner(System.in);
 	
-
 	
 	//METODE MENU
 	public static int showMenu() {
@@ -33,15 +34,20 @@ public class GestioMagatzem {
 		return opcion;
 		
 	}
+	
+	//METODE LLISTA
+	public static void llistat() {
+		System.out.println("List: ");
+		System.out.println(Item.toString() + "\n");
+	}
 	 
 	 //METODE 2-ALTA
-	 public static void altaArticle() {
+	public static void altaArticle() {
+		
 	 	Article newItem = new Article();
 	 	System.out.println("Introdueix el codi de l'article: ");
 	 	String codiItem = s1.next();
 	 	newItem.setCodi(codiItem);
-	 	
-	 	
 	 	
 	 	System.out.println("Introdueix la descripcio de l'article: ");
 	 	String descripcio = s2.next();
@@ -60,7 +66,7 @@ public class GestioMagatzem {
 	 	newItem.setStock(stock);
 	 	
 	 	Item.add(newItem);
-	 	newItem.setCodi(codiItem);
+	
 		 
 	 }
 	 
@@ -81,50 +87,67 @@ public class GestioMagatzem {
 	 
 	 //METOE 4-MODIFICACIO
 	 public static void modArticle() {
-	
-		for (int i = 0; i < Item.size(); i++) {
-			System.out.println(i + " - " + Item.get(i));
-			}
-		    
-		System.out.println("Introdueix el codi de l'article a modificar:  ");
-		System.out.println("1- Codi");
-        System.out.println("2- Descripció");
-        System.out.println("3- Preu de compra");
-        System.out.println("4- Preu de venta");
-        System.out.println("5- Stock");
-        System.out.println("6- Enrera");
-       
-	
-		boolean out = false;
-		switch(option) {
-			case 1:
-				Article modcodItem = new Article();
-				System.out.println("Modifiqui el codi de l'article");
-        		String codimItem = mod1.next();
-	 			modcodItem.setCodi(codimItem);
-        		break;
-        		
+		 
+		 for (int i = 0; i < Item.size(); i++) {
+				System.out.println(i + " - " + Item.get(i));
+				}
+    
+		 System.out.println("Introdueix el numero de l'article a modificar:  ");
+		 System.out.println("1- Codi");
+		 System.out.println("2- Descripció");
+		 System.out.println("3- Preu de compra");
+		 System.out.println("4- Preu de venta");
+		 System.out.println("5- Stock");
+		 System.out.println("6- Enrera");
+		 
+		 int numMod = mod.nextInt();
+		 
+		 Article modArt = Item.get(numMod);
+		 
+		 int modificarItem = mod.nextInt();
+
+		 boolean out = false;
+		 switch(modificarItem) {
+		 	case 1:
+		 		System.out.println("Modifiqui el codi de l'article");
+		 		String modCode = mod.next();
+		 		modArt.setCodi(modCode);
+		 		break;
+		
 			case 2:
-				System.out.println("Modifiqui el codi de l'article");
-        		String descrimItem = mod1.next();
-	 			
-        		break;
+				System.out.println("Modifiqui la descripció de l'article");
+		 		String modDef = mod.next();
+		 		modArt.setDescripcio(modDef);
+				break;
 			
 			case 3:
+				System.out.println("Modifiqui el preu de compra de l'article");
+		 		double modComp = mod.nextDouble();
+		 		modArt.setPreuDeCompra(modComp);
+		 		break;
 			
 			case 4:
+				System.out.println("Modifiqui el preu de venda de l'article");
+		 		double modVend = mod.nextDouble();
+		 		modArt.setPreuDeVenda(modVend);
 			
 			case 5:
+				System.out.println("Modifiqui l'stock de l'article");
+		 		int modStock = mod.nextInt();
+		 		modArt.setStock(modStock);
 			
 			case 6:
 				out = true;
-        		break;
-        	
-        	default:
-        		System.out.println("Opcions disponibles 1, 2, 3, 4, 5 o 6.");
-		 
+				break;
+			
+			default:
+				System.out.println("Opcions disponibles 1, 2, 3, 4, 5 o 6.");
+	 
+	}
+	       
+
 	 	}
-	 }
+	 
 	 
 	 //METODE 5-ENTRADA MERCADERIA
 	 public static void entradaMercaderia() {
@@ -161,8 +184,7 @@ public class GestioMagatzem {
 			
 			switch(opcion) {
 			case 1:
-				System.out.println("List: ");
-				System.out.println(Item.toString() + "\n");
+				llistat();
 				break;
 				
 			case 2:
@@ -176,7 +198,6 @@ public class GestioMagatzem {
 				
 			case 4:
 				modArticle();
-				break;
 				
 			case 5:
 				entradaMercaderia();
