@@ -7,7 +7,7 @@ public class Article {
 	private int stock;
 	
 
-	
+	//DEL METODE 2 AFEGIR, PER SETTEAR ELS VALORS
 	public Article(String codi2, String descripcio2, double preuDeCompra2, double preuDeVenda2, int stock2) {
 		this.codi = codi2;
 		this.descripcio = descripcio2;
