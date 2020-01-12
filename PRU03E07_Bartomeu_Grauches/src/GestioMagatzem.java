@@ -17,6 +17,10 @@ public class GestioMagatzem {
 	
 	static Scanner mod = new Scanner(System.in);
 	
+	static Scanner suma = new Scanner(System.in);
+	
+	static Scanner resta = new Scanner(System.in);
+	
 	
 	//METODE MENU
 	public static int showMenu() {
@@ -151,6 +155,26 @@ public class GestioMagatzem {
 	 
 	 //METODE 5-ENTRADA MERCADERIA
 	 public static void entradaMercaderia() {
+		 System.out.println("Introdueixi el numero de l'article a augmentar stock:  ");
+		 for (int i = 0; i < Item.size(); i++) {
+				System.out.println(i + " - " + Item.get(i));
+				}
+		 
+		 
+		 
+		 int numStock = suma.nextInt();
+		 Article sum = Item.get(numStock);
+		
+		 
+		 System.out.println("Numero a augmentar stock?  ");
+		 int sumStock = suma.nextInt();
+		 
+		 
+		 int stock = Item.get(numStock).getStock();
+		 
+		 stock = stock + sumStock;
+
+		 Item.get(numStock).setStock(stock);
 	 
 	 	
 		 
@@ -158,11 +182,29 @@ public class GestioMagatzem {
 	 
 	 //METODE 6-SORTIDA MERCADERIA
 	 public static void sortidaMercaderia() {
+		 System.out.println("Introdueixi el numero de l'article a augmentar stock:  ");
+		 for (int i = 0; i < Item.size(); i++) {
+				System.out.println(i + " - " + Item.get(i));
+				}
+		 int num2Stock = resta.nextInt();
+		 Article rest = Item.get(num2Stock);
+		
+		 
+		 System.out.println("Numero a augmentar stock?  ");
+		 int restStock = suma.nextInt();
+		 
+		 
+		 int stock = Item.get(num2Stock).getStock();
+		 
+		 stock = stock - restStock;
+		 if (stock < 0) {
+			 System.out.println("Stock no pot ser menor a 0, introdueixi un numero vàlid");
+		 } else {
+			 Item.get(num2Stock).setStock(stock);
+			 }
+		 
 		 
 	 }
-	
-	
-	
 	
 	
 	public static void main(String[] args) {
