@@ -3,22 +3,27 @@ import java.util.ArrayList;
 
 public class GestioMagatzem {
 
+	//DECLARAM ARRAY ITEM
 	static ArrayList<Article> Item = new ArrayList<>();
 	static int contador = 1;
 	
-
+	//INPUT METODE 2 AFEGIR
 	static Scanner s1 = new Scanner(System.in);
 	static Scanner s2 = new Scanner(System.in);
 	static Scanner s3 = new Scanner(System.in);
 	static Scanner s4 = new Scanner(System.in);
 	static Scanner s5 = new Scanner(System.in);
 	
+	//INPUT METODE 3 QUITAR
 	static Scanner remov = new Scanner(System.in);
 	
+	//INPUT METODE 4 MODIFICAR
 	static Scanner mod = new Scanner(System.in);
 	
+	//INPUT METODE 5 STOCK+
 	static Scanner suma = new Scanner(System.in);
 	
+	//INPUT METODE 6 STOCK-
 	static Scanner resta = new Scanner(System.in);
 	
 	
@@ -57,11 +62,11 @@ public class GestioMagatzem {
 	 	String descripcio = s2.next();
 	 	newItem.setDescripcio(descripcio);
 	 	
-	 	System.out.println("Introdueix preu de compra de l'article: ");
+	 	System.out.println("Introdueix preu en format 00,00 de compra de l'article: ");
 	 	double preuCompra = s3.nextDouble();
 	 	newItem.setPreuDeCompra(preuCompra);
 	 	
-	 	System.out.println("Introdueix preu de venta de l'article: ");
+	 	System.out.println("Introdueix preu de en format 00,00 venta de l'article: ");
 	 	double preuVenta = s4.nextDouble();
 	 	newItem.setPreuDeVenda(preuVenta);
 	 	
@@ -92,19 +97,22 @@ public class GestioMagatzem {
 	 //METOE 4-MODIFICACIO
 	 public static void modArticle() {
 		 
+		 
+    
+		 System.out.println("Introdueix el numero de l'article a modificar:  ");
 		 for (int i = 0; i < Item.size(); i++) {
 				System.out.println(i + " - " + Item.get(i));
 				}
-    
-		 System.out.println("Introdueix el numero de l'article a modificar:  ");
+
+		 
+		 int numMod = mod.nextInt();
+
 		 System.out.println("1- Codi");
 		 System.out.println("2- Descripció");
 		 System.out.println("3- Preu de compra");
 		 System.out.println("4- Preu de venta");
 		 System.out.println("5- Stock");
 		 System.out.println("6- Enrera");
-		 
-		 int numMod = mod.nextInt();
 		 
 		 Article modArt = Item.get(numMod);
 		 
